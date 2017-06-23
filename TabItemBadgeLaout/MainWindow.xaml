@@ -1,0 +1,37 @@
+﻿<metro:MetroWindow x:Class="TabItemBadgeLayout.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"    
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:TabItemBadgeLayout"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" ResizeMode="CanResizeWithGrip" GlowBrush="Black" BorderThickness="0">
+    <Grid>
+        <metro:MetroAnimatedTabControl Grid.Row="1" Background="Transparent">
+            <metro:MetroTabItem MinHeight="40">
+                <TabItem.Header>
+                    <metro:Badged Badge="2">
+                        <TextBlock Text="Not cropped header"
+                               Padding="0"
+                               Foreground="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type metro:ContentControlEx}}, Path=(TextElement.Foreground)}"
+                               FontSize="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type metro:ContentControlEx}}, Path=(TextElement.FontSize)}"
+                               />
+                    </metro:Badged>
+                </TabItem.Header>
+            </metro:MetroTabItem>
+            <metro:MetroTabItem>
+                <TabItem.Header>
+                    <metro:Badged Badge="3">
+                        <TextBlock Text="Cropped header"
+                               Padding="0"
+                               Foreground="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type metro:ContentControlEx}}, Path=(TextElement.Foreground)}"
+                               FontSize="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type metro:ContentControlEx}}, Path=(TextElement.FontSize)}"
+                               />
+                    </metro:Badged>
+                </TabItem.Header>
+            </metro:MetroTabItem>
+        </metro:MetroAnimatedTabControl>
+    </Grid>
+</metro:MetroWindow>
